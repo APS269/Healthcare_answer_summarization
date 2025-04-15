@@ -76,13 +76,49 @@ python summarize.py
 
 This uses FLAN-T5 with prefix tuning and a custom energy-based loss for perspective-aligned summarization.
 
+
 ### 5. Run inference and evaluate
+
+## 🔍 Inference + Evaluation
+
+Run on the test set to generate summaries and evaluate them.
 
 After training the summarizer, run:
 
 ```bash
 python inference.py
 ```
+
+
+### Output:
+
+- Generated summaries: `generated/generated_result.csv`
+- Evaluation scores: `generated/eval_scores.json`
+
+Metrics reported:
+- **BLEU-1, BLEU-2, BLEU-3, BLEU-4**
+- **METEOR**
+- **BERTScore F1**
+
+---
+
+## 📊 Sample Evaluation Output
+
+```
+=== 🮾 Evaluation Metrics ===
+🔸 METEOR: 5.63
+🔸 BLEU: {'bleu1': 2.51, 'bleu2': 1.12, 'bleu3': 0.64, 'bleu4': 0.39}
+🔸 BERTScore F1: 83.68
+```
+
+---
+
+## 📌 Notes
+
+- `train_summarizer.py` only uses cross-entropy for training (no energy-based loss).
+- `inference_eval.py` is standalone and does inference + full evaluation.
+- Make sure all model and data paths are consistent.
+
 
 This script:
 - Generates summaries on test data
