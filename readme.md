@@ -115,8 +115,8 @@ Metrics reported:
 
 ## 📌 Notes
 
-- `train_summarizer.py` only uses cross-entropy for training (no energy-based loss).
-- `inference_eval.py` is standalone and does inference + full evaluation.
+- `summarize.py` only uses cross-entropy for training (no energy-based loss).
+- `inference.py` is standalone and does inference + full evaluation.
 - Make sure all model and data paths are consistent.
 
 
